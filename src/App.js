@@ -13,12 +13,11 @@ function App( {domElement} ) {
   const urlParams = new URLSearchParams(window.location.search);
   const url = urlParams.get("url");
   const trackingId = domElement.getAttribute("data-tracking")
+  
 
   useEffect(() => {
     ReactGa.initialize(trackingId, {
-      gaOptions: {
-        name: 'lottery-widget'
-      }
+      debug: true,
     })
     ReactGa.pageview(window.location.pathname)
     // Fetch data from lottery
